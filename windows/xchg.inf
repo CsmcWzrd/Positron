@@ -1,0 +1,37 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ProviderName%
+DriverVer=03/26/2026,1.0.0.0
+CatalogFile=xchg.cat
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[Manufacturer]
+%ProviderName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%DeviceName%=Install, Root\XchgSample
+
+[Install]
+CopyFiles=DriverCopyFiles
+
+[DriverCopyFiles]
+xchg.sys
+
+[Install.Services]
+AddService=xchg,0x00000002,ServiceInstall
+
+[ServiceInstall]
+DisplayName=%ServiceName%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\xchg.sys
+
+[Strings]
+ProviderName="OpenAI"
+DeviceName="XCHG Timed Exchange Device"
+ServiceName="xchg"
