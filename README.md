@@ -1,4 +1,5 @@
 # XCHG timed data-exchange driver package
+### Name has been since changed to positron driver
 
 This package contains a **full Linux implementation** and **production-grade reference implementations** for **Windows KMDF** and **macOS DriverKit** with the same protocol and behavior.
 
